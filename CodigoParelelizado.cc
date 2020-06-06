@@ -1,9 +1,4 @@
-/**
- * Producto de matrices en C
- *
- * @author parzibyte
- * @see https://parzibyte.me/blog
-  /
+
 #include <stdio.h>
 
 #define FILAS_MATRIZ_B 5
