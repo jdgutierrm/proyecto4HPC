@@ -32,6 +32,7 @@ int main(void) {
   long producto[FILAS_MATRIZ_B][COLUMNAS_MATRIZ_B];
 
   // Necesitamos hacer esto por cada columna de la segunda matriz (B)
+//omp_set_num_threads(NUM_THREADS); Con este comando definimos la cantidad de procesadores a ejecutar. este Comando fue necesario para implementación del análisis de resultados.
 #pragma omp parallel for
   for (int a = 0; a < COLUMNAS_MATRIZ_B; a++) {
     // Dentro recorremos las filas de la primera (A)
