@@ -1,6 +1,6 @@
-**Metodología PCAM**
+**METODOLOGÍA PCAM**
 
-Particionamiento.
+**Particionamiento.**
 
 En la etapa de particionamiento los cálculos se descomponen en pequeñas tareas. Usualmente es independiente de la arquitectura o del modelo de programación. Un buen particionamiento divide tanto los cálculos asociados con el problema como los datos sobre los cuales opera.
 
@@ -16,7 +16,7 @@ T8→ Sumar los elementos multiplicados.
 T9→ Asignar el resultado de la suma a la posición de la matriz resultado correspondiente, seleccionada en la tarea T2.
 (Este procedimiento se repite hasta completar la matriz resultado)
 
-Comunicación
+**Comunicación**
 
 Las tareas generadas por una partición están propuestas para ejecutarse concurrentemente pero no pueden, en general, ejecutarse independientemente. Los cálculos en la ejecución de una tarea normalmente requerirán de datos asociados con otras tareas. Los datos deben transferirse entre las tareas y así permitir que los cálculos procedan. Este flujo de información se especifica en esta fase.
 
@@ -35,12 +35,12 @@ T8→ T9 envía la suma.
 T9← T8 recibe la suma y la añade a la matriz resultado.
 
 
-Aglomeración
+**Aglomeración**
 
 Las tareas y las estructuras de comunicación definidas en las dos primeras etapas del diseño son evaluadas con respecto a los requerimientos de ejecución y costos de implementación. Si es necesario, las tareas son combinadas en tareas más grandes para mejorar la ejecución o para reducir los costos de comunicación y sincronización. 
 T4, T5, T6, T7, T8, T9→ Ya que son procesos que se realizan múltiples veces se pueden realizar con memoria compartida(Para OpenMP)
 
-Mapeo
+**Mapeo**
 
 Cada tarea es asignada a un procesador de tal modo que intente satisfacer las metas de competencia al maximizar la utilización del procesador y minimizar los costos de comunicación. 
 
