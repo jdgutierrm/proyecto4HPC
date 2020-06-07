@@ -4,10 +4,13 @@
 #define COLUMNAS_MATRIZ_B 10
 #define FILAS_MATRIZ_A 5
 #define COLUMNAS_MATRIZ_A 5
-
+#include <ctime> 
+#include <iostream>
+using namespace std;
 
 int main(void) {
-
+  unsigned t0, t1;
+  t0=clock();
   long int matrizA[FILAS_MATRIZ_A][COLUMNAS_MATRIZ_A] = {
     {19,11,44,15,45},
     {21,50,23,48,47},
@@ -27,25 +30,17 @@ int main(void) {
     printf("Columnas de matriz A deben ser igual a filas de matriz B");
     return 0;
   }
-  //Lugar en donde se almacena el resultado
   long producto[FILAS_MATRIZ_B][COLUMNAS_MATRIZ_B];
 
-  // Necesitamos hacer esto por cada columna de la segunda matriz (B)
   for (int a = 0; a < COLUMNAS_MATRIZ_B; a++) {
-    // Dentro recorremos las filas de la primera (A)
     for (int i = 0; i < FILAS_MATRIZ_A; i++) {
       long int suma = 0;
-      // Y cada columna de la primera (A)
       for (int j = 0; j < COLUMNAS_MATRIZ_A; j++) {
-        // Multiplicamos y sumamos resultado
         suma += matrizA[i][j] * matrizB[j][a];
       }
-      // Lo acomodamos dentro del producto
       producto[i][a] = suma;
     }
   }
-
-  // Recorrer producto
   printf("Imprimiendo producto\n");
   for (int i = 0; i < FILAS_MATRIZ_A; i++) {
     for (int j = 0; j < COLUMNAS_MATRIZ_B; j++) {
@@ -53,4 +48,8 @@ int main(void) {
     }
     printf("\n");
   }
+  t1 = clock();
+  
+  double time = (double(t1-t0)/CLOCKS_PER_SEC);
+  cout<<"Execution Time:"<<time<<endl;
 }
