@@ -5,7 +5,9 @@
 #define COLUMNAS_MATRIZ_B 10
 #define FILAS_MATRIZ_A 5
 #define COLUMNAS_MATRIZ_A 5
-
+#include <ctime> 
+#include <iostream>
+using namespace std;
 
 int main(void) {
   unsigned t0, t1;
